@@ -1,16 +1,17 @@
 s=input().split(" ")
 N=len(s)
 y=''
+k=len(s[0])
 for i in range(N):
     if len(s[i])>=2:
         c=str(s[i])
         for j in range(len(s[i])):
             if 97<=ord(c[j])<=122:
-                q=ord(c[j])+len(s[i])
+                q=ord(c[j])+k
                 if q>122:
                     q=q-26
             elif 65<=ord(c[j])<=90:
-                q=ord(c[j])+len(s[i])
+                q=ord(c[j])+k
                 if q>90:
                     q=q-26
             y+=chr(q)
@@ -19,14 +20,13 @@ for i in range(N):
                 y=''
     else:
         if 97<=ord(s[i])<=122:
-            q=ord(s[i])+len(s[i])
+            q=ord(s[i])+k
             if q>122:
                 q=q-26
         elif 65<=ord(s[i])<=90:
-            q=ord(s[i])+len(s[i])
+            q=ord(s[i])+k
             if q>90:
                 q=q-26
         s[i]=chr(q)
 for i in range(N):
     print(s[i],end=" ")
-    
